@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+crossorigin="anonymous" referrerpolicy="no-referrer"/>
+<body>
+    <!-- SECCION I N I C I O -->
+    <section id="inicio">
+        <div class="contenido">
+            <header>
+                <div class="contenido-header">
+                    <h1>FACCI</h1>
+                    <nav id="nav" class="">
+                        <ul id="links">
+                            <li><a routerLink="/home" class="seleccionado" onclick="seleccionar(this)">INICIO</a></li>
+                            <li><a routerLink="/procesos" onclick="seleccionar(this)">PROCESOS</a></li>
+                            <li><a routerLink="/horarios" onclick="seleccionar(this)">HORARIO DE ATENCION</a></li>
+                            <li><a routerLink="/contacto" onclick="seleccionar(this)">CONTACTO</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Icono del menu responsive -->
+                    <div id="icono-nav" onclick="responsiveMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <div class="redes">
+                        <a href="https://www.youtube.com/channel/UCOferC0PjpEUegrVq8Re-TQ/videos?app=desktop&view=0&sort=dd&shelf_id=0"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/UleamEc/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+                        <a href="../Login/login.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+
+                    </div>
+                </div>
+            </header>
+        </div>
+    </section>
+ 
+        <!-- SECCTION C O N T A C T O -->
+        <section id="contacto">
+            <h3 class="titulo-seccion">Contactanos ahora</h3>
+            <div class="contenedor-form">
+                <form action="">
+                    <div class="fila mitad">
+                        <input type="text" placeholder="Nombre Completo *" class="input-mitad">
+                        <input type="email" placeholder="Dirección de Email" class="input-mitad">
+                    </div>
+                    <div class="fila">
+                        <input type="text" placeholder="Tema..." class="input-full">
+                    </div>
+                    <div class="fila">
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Tu Mensaje..." class="input-full"></textarea>
+                    </div>
+    
+                    <input type="submit" value="Enviar Mensaje" class="btn-enviar">
+                </form>
+            </div>
+        </section>
+    <!-- SECCION FOOTER -->
+    <footer>
+        <p>Todos los derechos reservados - 2022</p>
+        <div class="redes">
+            <a href="https://www.youtube.com/channel/UCOferC0PjpEUegrVq8Re-TQ/videos?app=desktop&view=0&sort=dd&shelf_id=0"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.facebook.com/UleamEc/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+        </div>
+
+    </footer>
+</body>

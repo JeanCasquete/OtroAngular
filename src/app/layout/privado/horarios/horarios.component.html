@@ -1,0 +1,83 @@
+<body>
+    <!-- SECCION I N I C I O -->
+    <section id="inicio">
+        <div class="contenido">
+            <header>
+                <div class="contenido-header">
+                     <a routerLink="/home"><h1>FACCI</h1></a>
+                    <nav id="nav" class="">
+                        <ul id="links">
+                            <li><a routerLink="/home" class="seleccionado" onclick="seleccionar(this)">INICIO</a></li>
+                            <li><a routerLink="/procesos" onclick="seleccionar(this)">PROCESOS</a></li>
+                            <li><a routerLink="/horarios" onclick="seleccionar(this)">HORARIO DE ATENCION</a></li>
+                            <li><a routerLink="/contacto" onclick="seleccionar(this)">CONTACTO</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Icono del menu responsive -->
+                    <div id="icono-nav" onclick="responsiveMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <div class="redes">
+                        <a href="https://www.youtube.com/channel/UCOferC0PjpEUegrVq8Re-TQ/videos?app=desktop&view=0&sort=dd&shelf_id=0"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/UleamEc/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+                        <a href="../Login/login.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+
+                    </div>
+                </div>
+            </header>
+        </div>
+    </section>
+        <!-- SECCION HORARIO -->
+        <section id="portfolio">
+            <h3 class="titulo-seccion">Horario de atencion</h3>
+            <div class="fila">
+                <div class="proyecto">
+                    <div class="overlay"></div>
+                     <img src="../assets/img/Horario.png"  >
+                    <div class="info">
+                        <p>Estos son los horarios para que nos visites</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- SECCION FOOTER -->
+    <footer>
+        <p>Todos los derechos reservados - 2022</p>
+        <div class="redes">
+            <a href="https://www.youtube.com/channel/UCOferC0PjpEUegrVq8Re-TQ/videos?app=desktop&view=0&sort=dd&shelf_id=0"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.facebook.com/UleamEc/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+        </div>
+
+    </footer>
+    <script>
+        //Función que me aplica el estilo a la opciòn seleccionada y quita la previamente seleccionada
+function seleccionar(link) {
+    var opciones = document.querySelectorAll('#links  a');
+    opciones[0].className = "";
+    opciones[1].className = "";
+    opciones[2].className = "";
+    opciones[3].className = "";
+    opciones[4].className = "";
+    link.className = "seleccionado";
+
+    //Hacemos desaparecer el menu una vez que se ha seleccionado una opcion
+    //en modo responsive
+    var x = document.getElementById("nav");
+    x.className = "";
+}
+
+//función que muestra el menu responsive
+function responsiveMenu() {
+    var x = document.getElementById("nav");
+    if (x.className === "") {
+        x.className = "responsive";
+    } else {
+        x.className = "";
+    }
+}
+
+    </script>
+</body>

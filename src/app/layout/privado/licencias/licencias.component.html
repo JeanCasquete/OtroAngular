@@ -1,0 +1,118 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+crossorigin="anonymous" referrerpolicy="no-referrer"/>
+<body>
+    <!-- SECCION I N I C I O -->
+    <section id="inicio">
+        <div class="contenido">
+            <header>
+                <div class="contenido-header">
+                    <h1>FACCI</h1>
+                    <nav id="nav" class="">
+                        <ul id="links">
+                            <li><a routerLink="/home" class="seleccionado" onclick="seleccionar(this)">INICIO</a></li>
+                            <li><a routerLink="/procesos" onclick="seleccionar(this)">PROCESOS</a></li>
+                            <li><a routerLink="/horarios" onclick="seleccionar(this)">HORARIO DE ATENCION</a></li>
+                            <li><a routerLink="/contacto" onclick="seleccionar(this)">CONTACTO</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Icono del menu responsive -->
+                    <div id="icono-nav" onclick="responsiveMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
+
+                    <div class="redes">
+                        <a href="https://www.youtube.com/channel/UCOferC0PjpEUegrVq8Re-TQ/videos?app=desktop&view=0&sort=dd&shelf_id=0"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/UleamEc/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+                        <a href="../Login/login.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+
+                    </div>
+                </div>
+            </header>
+            <div class="presentacion">
+                <section class="container about">
+                    <h2 class="subtitle">Solicitud de Licencias</h2>
+                    <div>
+                        <form id="Horario" action="">
+        
+                            <div id="Nombree">
+                                <h1>Nombre del estudiante</h1>
+                                <input class="controls" type="text" id="nombred" placeholder="Ingrese un nombre" name="nombres" required>
+                                <span id="n-error" aria-live="assertive"></span>
+                            </div>
+        
+                            <h1>Escoja la carrera</h1>
+                            <div class="select">
+                                <select name="carrera" id="carrera">
+                                    <option value="0" selected disabled>Elige una opción</option>
+                                    <option value="IES">Ing. en Sistemas</option>
+                                    <option value="ITI">Ing. en Tecnologías de la información</option>
+                                    <option value="IS">Ing. de Software</option>
+                                </select>
+                                
+                            </div>
+                            <span id="c-error" aria-live="assertive"> </span>
+        
+                            <h1>Escoja el Nivel</h1>
+                            <div class="select">
+                                <select name="nivel" id="nivel">
+                                    <option value="0"selected disabled>Elige una opción</option>
+                                    <option value="N1">Primer Nivel</option>
+                                    <option value="N2">Segundo Nivel</option>
+                                    <option value="N3">Tercer Nivel</option>
+                                    <option value="N4">Cuarto Nivel</option>
+                                    <option value="N5">Quinto Nivel</option>
+                                    <option value="N6">Sexto Nivel</option>
+                                    <option value="N7">Séptimo Nivel</option>
+                                    <option value="N8">Octavo Nivel</option>
+                                    <option value="N9">Noveno Nivel</option>
+                                </select>
+                            </div>
+                            <span id="nv-error" aria-live="assertive"></span>
+                            <h1>Escoja el paralelo</h1>
+                            <div class="select">
+                                <select name="paralelo" id="paralelo">
+                                    <option value="0" selected disabled>Elige una opción</option>
+                                    <option value="A">Paralelo A</option>
+                                    <option value="B">Paralelo B</option>
+                                    <option value="C">Paralelo C</option>
+                                </select>
+                            </div>
+                            <span id="p-error" aria-live="assertive"></span>
+                            <h1>Escoja la licencia que necesita</h1>
+                            <div class="select">
+                                <select name="licencias" id="licencias">
+                                    <option value="0" selected disabled>Elige una opción</option>
+                                    <option value="M1">Licencia por enfermedad</option>
+                                    <option value="M2">Licencia por maternidad o paternidad</option>
+                                    <option value="M3">Licencia por hospitalizacion</option>
+                                    <option value="M4">Licencia por faltas a clases</option>
+                                    <option value="M5">Licencia por calamidad domestica</option>
+                                    <option value="M6">Licencia para el cumplimiento de servicio militar</option>
+                                </select>
+                            </div>
+                            <span id="l-error" aria-live="assertive"></span>
+                            <input type="submit" class="send-button" value="Siguiente">
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+  
+    <!-- SECCION FOOTER -->
+    <footer>
+        <p>Todos los derechos reservados - 2022</p>
+        <div class="redes">
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.facebook.com/UleamEc/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>

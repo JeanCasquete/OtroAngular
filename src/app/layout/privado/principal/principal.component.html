@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+crossorigin="anonymous" referrerpolicy="no-referrer"/>
+<body>
+    <!-- SECCION I N I C I O -->
+    <section id="inicio">
+        <div class="contenido">
+            <header>
+                <div class="contenido-header">
+                    <h1>FACCI</h1>
+                    <nav id="nav" class="">
+                        <ul id="links">
+                            <li><a routerLink="/home" class="seleccionado" onclick="seleccionar(this)">INICIO</a></li>
+                            <li><a routerLink="/procesos" onclick="seleccionar(this)">PROCESOS</a></li>
+                            <li><a routerLink="/horarios" onclick="seleccionar(this)">HORARIO DE ATENCION</a></li>
+                            <li><a routerLink="/contacto" onclick="seleccionar(this)">CONTACTO</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Icono del menu responsive -->
+                    <div id="icono-nav" onclick="responsiveMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
+
+                    <div class="redes">
+                        <a href="https://www.youtube.com/channel/UCOferC0PjpEUegrVq8Re-TQ/videos?app=desktop&view=0&sort=dd&shelf_id=0"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/UleamEc/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+                        <a href="../Login/login.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+                    </div>
+                </div>
+            </header>
+            <div class="presentacion">
+                <p class="bienvenida">Bienvenidos a</p>
+                <h2>La plataforma de Licencias y Permisos FACCI</h2>
+                <p class="descripcion">Gestiona tus permisos y licencias con nosotros</p>
+                <a href="../Procesos/index.html">Solicitalos</a>
+            </div>
+        </div>
+    </section>
+    <!-- SECCION S E R V I C I O S -->
+    <section id="servicios">
+        <h3 class="titulo-seccion">NUESTROS SERVICIOS</h3>
+        <div class="fila">
+            <div class="servicio">
+                <span class="icono"> <i class="fa-solid fa-code"></i></span>
+                <h4>Licencias</h4>
+                <hr>
+                <ul class="servicios-tag">
+                </ul>
+                <p>Solicita tus licencias para tus diferentes tramites en la universidad!</p>
+            </div>
+            <div class="servicio">
+                <span class="icono"><i class="fa-solid fa-file-code"></i></span>
+                <h4>Permisos</h4>
+                <hr>
+                <ul class="servicios-tag">
+                </ul>
+                <p>Solicita tus permisos para tus diferentes tramites en la univerisdad</p>
+            </div>
+            <div class="servicio">
+                <span class="icono"><i class="fa-solid fa-arrow-trend-up"></i></span>
+                <h4>Acesoriamento</h4>
+                <hr>
+                <ul class="servicios-tag">
+                </ul>
+                <p>Recive ayuda con tus gestiones de procesos de la universidad</p>
+            </div>
+        </div>
+    </section>
+    <!-- SECCION FOOTER -->
+    <script>
+        //Función que me aplica el estilo a la opciòn seleccionada y quita la previamente seleccionada
+function seleccionar(link) {
+    var opciones = document.querySelectorAll('#links  a');
+    opciones[0].className = "";
+    opciones[1].className = "";
+    opciones[2].className = "";
+    opciones[3].className = "";
+    opciones[4].className = "";
+    link.className = "seleccionado";
+
+    //Hacemos desaparecer el menu una vez que se ha seleccionado una opcion
+    //en modo responsive
+    var x = document.getElementById("nav");
+    x.className = "";
+}
+
+//función que muestra el menu responsive
+function responsiveMenu() {
+    var x = document.getElementById("nav");
+    if (x.className === "") {
+        x.className = "responsive";
+    } else {
+        x.className = "";
+    }
+}
+
+    </script>
+    <footer>
+        <p>Todos los derechos reservados - 2022</p>
+        <div class="redes">
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.facebook.com/UleamEc/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+        </div>
+
+    </footer>
+</body>
+<router-outlet></router-outlet>

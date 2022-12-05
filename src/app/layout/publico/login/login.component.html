@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+crossorigin="anonymous" referrerpolicy="no-referrer"/>
+<body>
+    <header class="hero">
+      <nav class="nav container">
+          <div class="nav__logo">
+              <a href="" class="nav__title">Licencias y permisos FACCI</a>
+          </div>
+      </nav>
+  </header>
+      <div class="center">
+        <h1>Iniciar sesion</h1>
+        <form [formGroup]="myForm" (ngSubmit)="submitFormulario()">
+          <div class="txt_field">
+            <input formControlName="email" id="email" type="email" required>
+            <label>Correo</label>
+          </div>
+          <div class="txt_field">
+            <input formControlName="password" id="password" type="password" required>
+            <span></span>
+            <label>Contraseña</label>
+          </div>
+         <div class="pass"><a href="../recuperar/PagRecuperar.html">Olvidaste tu contraseña?</a> </div>
+          <input type="submit" value="Login">
+          <div class="signup_link">
+            No eres usuario? <a routerLink="/register">registrate</a>
+            <p class="warnings" id="warnings"></p>
+          </div>
+        </form>
+      </div>
+  
+    <footer class="footer">
+      <section class="footer__copy container">
+          <div class="footer__social">
+              <a href="https://www.facebook.com/Facci.Uleam/" class="footer__icons"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+              <a href="https://twitter.com/facciuleam" class="footer__icons"><i class="fa-brands fa-twitter fa-2xl"></i></a>
+              <a href="#" class="footer__icons"><i class="fa-brands fa-youtube fa-2xl"></i></a>
+          </div>
+          <h3 class="footer__copyright">Derechos reservados &copy; Licencias FACCI</h3>
+      </section>
+  </footer>
+    </body>

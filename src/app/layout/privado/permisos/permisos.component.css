@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+html {
+    scroll-behavior: smooth;
+}
+/* *********************/
+/* seccion I N I C I O */
+/* *********************/
+
+#inicio {
+    background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("https://www.aboutespanol.com/thmb/6vFo9Fm28-hvjw-pdUICrrXW9-s=/3859x2171/smart/filters:no_upscale()/GettyImages-79573142-56fd623b3df78c7d9ef979a7.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+}
+
+#inicio .contenido header {
+    background-color: rgba(0, 0, 0, .8);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+}
+
+#inicio .contenido header .contenido-header {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+#inicio .contenido header .contenido-header h1 {
+    text-align: center;
+    color: #75257b;
+}
+
+#inicio .contenido header .contenido-header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+#inicio .contenido header .contenido-header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 12px;
+    font-weight: 400;
+    transition: .5s;
+}
+
+#inicio .contenido header .contenido-header nav ul li a:hover {
+    color: #75257b;
+}
+
+#inicio .contenido header .contenido-header .redes a {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    margin-left: 10px;
+    transition: .5s;
+}
+
+#inicio .contenido header .contenido-header .redes a:hover {
+    color: #75257b;
+}
+
+#inicio .contenido header .contenido-header .seleccionado {
+    color: #75257b;
+}
+
+#inicio .contenido .presentacion {
+    max-width: 1100px;
+    height: 90vh;
+    margin: auto;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#inicio .contenido .presentacion .bienvenida {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+#inicio .contenido .presentacion h2 {
+    font-size: 55px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+#inicio .contenido .presentacion h2 span {
+    font-size: 25px;
+    color: #75257b;
+}
+
+#inicio .contenido .presentacion .descripcion {
+    max-width: 700px;
+    margin: 25px auto;
+    font-size: 18px;
+    text-align: center;
+}
+
+#inicio .contenido .presentacion a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 25px;
+    padding: 20px 25px;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+#inicio .contenido .presentacion a:hover {
+    background-color: #75257b;
+}
+
+#icono-nav {
+    color: #fff;
+    display: none;
+}
+
+
+/* *********************/
+/* seccion F O O T E R */
+/* *********************/
+
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    margin: 5px;
+    font-size: 26px;
+}
+
+/* *********************/
+/* seccion FORM Permisos */
+/* *********************/
+#Horario {
+    width: 450px;
+    height: 540px;
+    background: #181a1c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    color: white;
+}
+span#c-error {
+    color: red;
+}
+span#nv-error {
+    color: red;
+}
+span#l-error {
+    color: red;
+}
+span#p-error {
+    color: red;
+}
+
+select {
+    background: white;
+    flex: 1;
+    padding: 0 .5em;
+    color: #000000;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+    padding: 3px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.select {
+    display: flex;
+    width: 370px;
+    height: 40px;
+    line-height: 3;
+    background: #000000;
+    overflow: hidden;
+    border-radius: .35em;
+    margin: 10px;
+    border: 1px solid #8a168e;
+}
+
+#Nombre {
+    margin: auto;
+    border-radius: 4px;
+    color: white;
+    padding: 10px;
+}
+
+#Nombre h1 {
+    padding: 10px;
+}
+
+.controls {
+    width: 370px;
+    height: 40px;
+    background: #ffffffbb;
+    padding: 10px;
+    border-radius: .35em;
+    border: 1px solid #8d289d;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+}
+
+::placeholder {
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000;
+}
+
+.send-button {
+    padding: 15px 25px;
+    margin: 20px;
+    font-size: 16px;
+    border: 2px solid #000000;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(to right, transparent 50%, #8d289d 60%);
+    background-size: 200%;
+    background-position: left;
+    transition: background-position 0.5s;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.send-button:hover {
+    background-position: right;
+    color: white;
+    font-weight: 700;
+}
+
+.about {
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 22px;
+    padding: 50px 50px 1px 20px;
+    color: aliceblue;
+    text-decoration: none;
+    text-align:center;
+    font-weight: 700;
+    text-shadow: 2px  1px 2px gray,
+                1px  1px 1px gray,
+                -2px  1px 2px black,
+                2px -1px 2px gray;
+    }
+
+/* *********************/
+/* seccion R E S P O N S I V E */
+/* *********************/
+
+@media screen and (max-width: 800px) {
+    .redes {
+        display: none;
+    }
+    nav {
+        display: none;
+    }
+    nav.responsive {
+        display: block;
+        background-color: rgba(0, 0, 0, .8);
+        width: 100%;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        padding: 10px 0;
+    }
+    nav.responsive ul {
+        display: block !important;
+        text-align: center;
+    }
+    nav.responsive ul li {
+        margin: 5px 0;
+    }
+    #icono-nav {
+        display: block;
+    }
+    #inicio .contenido .presentacion h2 {
+        font-size: 40px;
+    }
+
+    /* seccion MIS SERVICIOS */
+    #servicios {
+        padding: 50px 15px;
+    }
+    #servicios .fila {
+        display: block;
+    }
+    #servicios .fila .servicio {
+        margin: 10px auto;
+    }
+  
+
+ 
+}
