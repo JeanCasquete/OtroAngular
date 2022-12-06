@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
 
 public myForm!:FormGroup;
 private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+public message: string = '';
 
 
   constructor(private fb:FormBuilder,private Loginprd:AutenticacionService, private router:Router,private _snackBar: MatSnackBar) { }
@@ -37,7 +38,7 @@ private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)
    if(this.myForm.invalid)
    {
     this.error();
-    this.myForm.reset();
+    this.message="Error al ingresar los datos"
    }else {
     this.router.navigate(['/home']);
    }
