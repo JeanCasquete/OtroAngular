@@ -1,9 +1,11 @@
 import { group } from '@angular/animations';
-import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { AutenticacionService } from 'src/app/shared/autenticacion.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {ErrorStateMatcher} from '@angular/material/core';
+
 
 
 
@@ -18,7 +20,7 @@ public myForm!:FormGroup;
 private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 
-  constructor(private fb:FormBuilder,private Loginprd:AutenticacionService, private router:Router) { }
+  constructor(private fb:FormBuilder,private Loginprd:AutenticacionService, private router:Router,private _snackBar: MatSnackBar) { }
   ngOnInit(): void {
     this.myForm=this.createMyForms();
   }
@@ -34,11 +36,21 @@ private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)
   public submitFormulario(){
    if(this.myForm.invalid)
    {
-    alert("Ingresa un correo electronico");
+    this.error();
+    this.myForm.reset();
    }else {
     this.router.navigate(['/home']);
    }
    
+  }
+
+  error() {
+    this._snackBar.open('Ingresa correctamente los datos', 'Ok', {
+      duration:5000,
+      horizontalPosition:'center',
+      verticalPosition:'bottom',
+
+    }) 
   }
 
 }
