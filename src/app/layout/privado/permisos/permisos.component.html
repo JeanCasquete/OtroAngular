@@ -80,12 +80,11 @@
                             </div>
                             <span id="p-error" aria-live="assertive"></span>
                             <h1>Escoja la licencia que necesita</h1>
-                          
+                            <div class="select">
                                 <select name="" id="">
-                                    <option *ngFor="let item of items">{{item.name}}</option>
+                                    <option *ngFor="let item of items">{{item.label}}</option>
                                 </select>
-                            
-                           
+                             </div>
                             <span id="l-error" aria-live="assertive"></span>
                             <input type="submit" class="send-button" value="Siguiente">
                         </form>

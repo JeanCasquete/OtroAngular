@@ -24,7 +24,8 @@ export class PermisosComponent {
     const xml = parser.parseFromString(text, 'text/xml');
     this.items = Array.from(xml.querySelectorAll('item')).map(item => {
       return {
-        name: item.getAttribute('name')
+        name: item.getAttribute('id'),
+        label: item.textContent
         
       };
     });

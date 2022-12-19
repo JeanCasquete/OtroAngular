@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-  <item name="Item 1"></item>
-  <item name="Item 2"></item>
-  <item name="Item 3"></item>
+  <item id="1">Permiso por trabajo</item>
+  <item id="2">Permiso para cambio de paralelo</item>
+  <item id="3">Permiso de cambio de carrera</item>
+  <item id="4">Permiso para viaje de estudiantes</item>
+  <item id="5">Permiso de cambio de carrera</item>
   <!-- Otros elementos "item" aquí -->
 </root>
