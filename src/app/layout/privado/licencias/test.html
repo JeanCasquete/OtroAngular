@@ -1,0 +1,20 @@
+
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">
+                 ID
+                </th>
+                <th scope="col">
+                 Solicitud
+                </th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let datitos of solicitud">
+            <tr>
+               <td scope="row">{{datitos.id}}</td>
+               <td>{{datitos.solicitud}}</td>
+            </tr>
+
+        </tbody>
+   </table>

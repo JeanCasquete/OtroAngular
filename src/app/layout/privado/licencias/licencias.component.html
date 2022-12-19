@@ -84,14 +84,9 @@ crossorigin="anonymous" referrerpolicy="no-referrer"/>
                             <span id="p-error" aria-live="assertive"></span>
                             <h1>Escoja la licencia que necesita</h1>
                             <div class="select">
-                                <select name="licencias" id="licencias">
+                                <select name="solicitud">
                                     <option value="0" selected disabled>Elige una opción</option>
-                                    <option value="M1">Licencia por enfermedad</option>
-                                    <option value="M2">Licencia por maternidad o paternidad</option>
-                                    <option value="M3">Licencia por hospitalizacion</option>
-                                    <option value="M4">Licencia por faltas a clases</option>
-                                    <option value="M5">Licencia por calamidad domestica</option>
-                                    <option value="M6">Licencia para el cumplimiento de servicio militar</option>
+                                    <option [value]="datitos" *ngFor="let datitos of solicitud">{{datitos.solicitud}}</option>
                                 </select>
                             </div>
                             <span id="l-error" aria-live="assertive"></span>

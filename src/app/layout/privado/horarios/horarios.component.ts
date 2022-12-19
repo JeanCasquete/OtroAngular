@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import DocumentJson from "src/assets/json/datos.json";
 
 @Component({
   selector: 'app-horarios',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
 export class HorariosComponent {
  tittle='horario';
  myimage:string='../assets/img/horarios.png';
+
+ solicitud: any = DocumentJson;
 
 }

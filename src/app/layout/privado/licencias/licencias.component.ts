@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import DocumentJson from "src/assets/json/datos.json";
+
 
 @Component({
   selector: 'app-licencias',
@@ -7,6 +9,7 @@ import { Component } from '@angular/core';
 })
 export class LicenciasComponent  {
 
+  solicitud: any = DocumentJson;
   
 
 }

@@ -80,17 +80,12 @@
                             </div>
                             <span id="p-error" aria-live="assertive"></span>
                             <h1>Escoja la licencia que necesita</h1>
-                            <div class="select">
-                                <select name="licencias" id="licencias">
-                                    <option value="0" selected disabled>Elige una opción</option>
-                                    <option value="M1">Permiso por trabajo</option>
-                                    <option value="M2">Permiso para cambio de paralelo</option>
-                                    <option value="M3">Permiso de cambio de carrera</option>
-                                    <option value="M4">Permiso para viaje de estudiantes</option>
-                                    <option value="M5">Licencia por calamidad domesticaw2</option>
-                                    <option value="M6">Licencia para el cumplimiento de servicio militar</option>
+                          
+                                <select name="" id="">
+                                    <option *ngFor="let item of items">{{item.name}}</option>
                                 </select>
-                            </div>
+                            
+                           
                             <span id="l-error" aria-live="assertive"></span>
                             <input type="submit" class="send-button" value="Siguiente">
                         </form>
@@ -110,6 +105,4 @@
         </div>
 
     </footer>
-
-    <script src="script.js"></script>
 </body>
