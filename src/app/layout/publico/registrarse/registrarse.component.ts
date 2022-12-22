@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AutenticacionService } from 'src/app/shared/autenticacion.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {AngularFireAuth} from '@angular/fire/compat/auth';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class RegistrarseComponent implements OnInit {
 
   public myForm!:FormGroup;
   constructor(private fb:FormBuilder,private registerprd:AutenticacionService, 
-    private router:Router,private _snackBar: MatSnackBar) { }
+    private router:Router,private _snackBar: MatSnackBar,private afAuth:AngularFireAuth) { }
   ngOnInit(): void {
     this.myForm=this.createMyForms();
   }
@@ -35,30 +36,62 @@ export class RegistrarseComponent implements OnInit {
   public submitFormulario(){
     if(this.myForm.invalid)
     {
-      return this.error2();
-    }   if(!this.registerprd.ingresarRegistro(this.myForm.value)) {
-      this.error();
-      
+      return this.errorExiste('Llena todos los datos');
+    } if(!this.registerprd.ingresarRegistro(this.myForm.value)) {
+      return this.errorExiste('Las contraseñas deben ser iguales');    
      }else {
-      this.router.navigate(['/login']);
+      const email =this.myForm.value.email;
+      const password= this.myForm.value.password;
+      this.afAuth.createUserWithEmailAndPassword(email,password).then((user)=> {
+        this.Exitoso('Registro Exitoso')
+        setTimeout(() => {
+          this.router.navigate(['/login']);
+        }, 3000);
+      }).catch((error)=>{
+       this.errorExiste(this.fireBaseError(error.code)) 
+      })      
      }
   }
 
-  error() {
-    this._snackBar.open('Ingresa correctamente los datos', 'OK', {
+  fireBaseError(code: string ) 
+  {
+     switch(code) 
+     {
+       case 'auth/email-already-in-use':
+        return 'Esta correo ya esta registrado';
+       case 'auth/weak-password':
+        return'Contraseña muy debil';
+        case 'auth/invalid-email':
+          return 'Agregue un correo Valido';
+       default:
+        return 'Error desconocido';
+
+     }
+  }
+
+
+  errorExiste(mensaje:string) {
+    this._snackBar.open(mensaje, 'OK', {
       duration:5000,
       horizontalPosition:'center',
       verticalPosition:'bottom',
+      panelClass: ['blue-snackbar']
+
 
     }) 
   }
-  error2() {
-    this._snackBar.open('Llena todos los datos', 'OK', {
-      duration:5000,
+
+  Exitoso(mensaje:string) {
+    this._snackBar.open(mensaje, '',{
+      duration:3000,
       horizontalPosition:'center',
       verticalPosition:'bottom',
+      panelClass: ['blue-snackbar']
+      
+      
 
     }) 
+    
   }
 
 }

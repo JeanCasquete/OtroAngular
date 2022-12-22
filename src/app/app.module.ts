@@ -6,6 +6,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
 import {ThemePalette} from '@angular/material/core';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {AngularFireModule} from '@angular/fire/compat'
+import {AngularFireAuthModule} from '@angular/fire/compat/auth'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +19,7 @@ import { LicenciasComponent } from './layout/privado/licencias/licencias.compone
 import { PermisosComponent } from './layout/privado/permisos/permisos.component';
 import { RegistrarseComponent } from './layout/publico/registrarse/registrarse.component';
 import { HorariosComponent } from './layout/privado/horarios/horarios.component';
+import { environment } from 'src/environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,11 +36,12 @@ import { HorariosComponent } from './layout/privado/horarios/horarios.component'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, 
     BrowserAnimationsModule,
     MatButtonModule,
     MatTabsModule,
     MatSnackBarModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
