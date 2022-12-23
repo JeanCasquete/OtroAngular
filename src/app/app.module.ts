@@ -20,6 +20,7 @@ import { PermisosComponent } from './layout/privado/permisos/permisos.component'
 import { RegistrarseComponent } from './layout/publico/registrarse/registrarse.component';
 import { HorariosComponent } from './layout/privado/horarios/horarios.component';
 import { environment } from 'src/environments/environment';
+import { ResetpassComponent } from './layout/publico/resetpass/resetpass.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { environment } from 'src/environments/environment';
     LicenciasComponent,
     PermisosComponent,
     RegistrarseComponent,
-    HorariosComponent
+    HorariosComponent,
+    ResetpassComponent
   ],
   imports: [
     BrowserModule,
