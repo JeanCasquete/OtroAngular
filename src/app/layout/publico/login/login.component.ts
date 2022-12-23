@@ -46,7 +46,13 @@ private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)
     const password = this.myForm.value.password;
     this.afAuth.signInWithEmailAndPassword(email,password).then((user)=>{
       console.log(user);
-      this.error('Login exitoso');
+      if(user.user?.emailVerified) {
+        this.error('Login exitoso');
+
+      }else {
+        
+      }
+      
     }).catch((error)=> {
       console.log(error);
       this.error(this.Loginprd.codeError(error.code))
