@@ -43,16 +43,27 @@ export class RegistrarseComponent implements OnInit {
       const email =this.myForm.value.email;
       const password= this.myForm.value.password;
       this.afAuth.createUserWithEmailAndPassword(email,password).then((user)=> {
-        this.Exitoso('Registro Exitoso')
-        setTimeout(() => {
-          this.router.navigate(['/login']);
-        }, 3000);
+        this.VerificarCorreo();
+
       }).catch((error)=>{
        this.errorExiste(this.registerprd.codeError(error.code)) 
       })      
      }
   }
 
+  VerificarCorreo() {
+
+    this.afAuth.currentUser.then(user=> user?.sendEmailVerification())
+    .then(() => {
+      this.Exitoso('Registro Exitoso')
+      setTimeout(() => {
+        this.router.navigate(['/verificacion']);
+      }, 3000);
+    }) 
+
+    
+  }
+  
   errorExiste(mensaje:string) {
     this._snackBar.open(mensaje, 'OK', {
       duration:5000,

@@ -21,6 +21,8 @@ import { RegistrarseComponent } from './layout/publico/registrarse/registrarse.c
 import { HorariosComponent } from './layout/privado/horarios/horarios.component';
 import { environment } from 'src/environments/environment';
 import { ResetpassComponent } from './layout/publico/resetpass/resetpass.component';
+import { VerificacionComponent } from './layout/publico/verificacion/verificacion.component';
+import {MatNativeDateModule} from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,8 @@ import { ResetpassComponent } from './layout/publico/resetpass/resetpass.compone
     PermisosComponent,
     RegistrarseComponent,
     HorariosComponent,
-    ResetpassComponent
+    ResetpassComponent,
+    VerificacionComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { ResetpassComponent } from './layout/publico/resetpass/resetpass.compone
     MatButtonModule,
     MatTabsModule,
     MatSnackBarModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,7 @@ import { ProcesosComponent } from './layout/privado/procesos/procesos.component'
 import { LoginComponent } from './layout/publico/login/login.component';
 import { RegistrarseComponent } from './layout/publico/registrarse/registrarse.component';
 import { ResetpassComponent } from './layout/publico/resetpass/resetpass.component';
+import { VerificacionComponent } from './layout/publico/verificacion/verificacion.component';
 
 
 //Rutas de navegacion
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'horarios', component: HorariosComponent},
   {path: 'register', component: RegistrarseComponent},
   {path: 'reset', component: ResetpassComponent},
+  {path: 'verificacion', component: VerificacionComponent},
   {path: '**', redirectTo: 'login',pathMatch:'full'},
 ];
 
