@@ -48,27 +48,10 @@ export class RegistrarseComponent implements OnInit {
           this.router.navigate(['/login']);
         }, 3000);
       }).catch((error)=>{
-       this.errorExiste(this.fireBaseError(error.code)) 
+       this.errorExiste(this.registerprd.codeError(error.code)) 
       })      
      }
   }
-
-  fireBaseError(code: string ) 
-  {
-     switch(code) 
-     {
-       case 'auth/email-already-in-use':
-        return 'Esta correo ya esta registrado';
-       case 'auth/weak-password':
-        return'Contraseña muy debil';
-        case 'auth/invalid-email':
-          return 'Agregue un correo Valido';
-       default:
-        return 'Error desconocido';
-
-     }
-  }
-
 
   errorExiste(mensaje:string) {
     this._snackBar.open(mensaje, 'OK', {
