@@ -8,6 +8,7 @@ import { PrincipalComponent } from './layout/privado/principal/principal.compone
 import { ProcesosComponent } from './layout/privado/procesos/procesos.component';
 import { LoginComponent } from './layout/publico/login/login.component';
 import { RegistrarseComponent } from './layout/publico/registrarse/registrarse.component';
+import { ResetpassComponent } from './layout/publico/resetpass/resetpass.component';
 
 
 //Rutas de navegacion
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'procesos/permisos', component: PermisosComponent},
   {path: 'horarios', component: HorariosComponent},
   {path: 'register', component: RegistrarseComponent},
+  {path: 'reset', component: ResetpassComponent},
   {path: '**', redirectTo: 'login',pathMatch:'full'},
 ];
 
