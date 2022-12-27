@@ -9,6 +9,7 @@ import {AngularFireAuth} from '@angular/fire/compat/auth';
 
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -54,7 +55,8 @@ private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)
       
     }).catch((error)=> {
       console.log(error);
-      this.error(this.Loginprd.codeError(error.code))
+      this.error(this.Loginprd.codeError(error.code));
+      console.log(email,password);
     })
     
    }

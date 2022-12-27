@@ -36,21 +36,19 @@ crossorigin="anonymous" referrerpolicy="no-referrer"/>
                 <section class="container about">
                     <h2 class="subtitle">Solicitud de Licencias</h2>
                     <div>
-                        <form id="Horario" action="">
-        
-                            <div id="Nombree">
+                        <form id="Horario" [formGroup]="myForm" (ngSubmit)="agregardato()">
+                            <div id="Nombre">
                                 <h1>Nombre del estudiante</h1>
-                                <input class="controls" type="text" id="nombred" placeholder="Ingrese un nombre" name="nombres" required>
+                                <input class="controls" formControlName="names" type="text" name="nombres" required>
                                 <span id="n-error" aria-live="assertive"></span>
                             </div>
-        
                             <h1>Escoja la carrera</h1>
                             <div class="select">
-                                <select name="carrera" id="carrera">
+                                <select #seleCa>
                                     <option value="0" selected disabled>Elige una opción</option>
-                                    <option value="IES">Ing. en Sistemas</option>
-                                    <option value="ITI">Ing. en Tecnologías de la información</option>
-                                    <option value="IS">Ing. de Software</option>
+                                    <option value="1">Ing. en Sistemas</option>
+                                    <option value="2">Ing. en Tecnologías de la información</option>
+                                    <option value="3">Ing. de Software</option>
                                 </select>
                                 
                             </div>
@@ -58,35 +56,35 @@ crossorigin="anonymous" referrerpolicy="no-referrer"/>
         
                             <h1>Escoja el Nivel</h1>
                             <div class="select">
-                                <select name="nivel" id="nivel">
+                                <select #seleNiv>
                                     <option value="0"selected disabled>Elige una opción</option>
-                                    <option value="N1">Primer Nivel</option>
-                                    <option value="N2">Segundo Nivel</option>
-                                    <option value="N3">Tercer Nivel</option>
-                                    <option value="N4">Cuarto Nivel</option>
-                                    <option value="N5">Quinto Nivel</option>
-                                    <option value="N6">Sexto Nivel</option>
-                                    <option value="N7">Séptimo Nivel</option>
-                                    <option value="N8">Octavo Nivel</option>
-                                    <option value="N9">Noveno Nivel</option>
+                                    <option value="1">Primer Nivel</option>
+                                    <option value="2">Segundo Nivel</option>
+                                    <option value="3">Tercer Nivel</option>
+                                    <option value="4">Cuarto Nivel</option>
+                                    <option value="5">Quinto Nivel</option>
+                                    <option value="6">Sexto Nivel</option>
+                                    <option value="8">Séptimo Nivel</option>
+                                    <option value="9">Octavo Nivel</option>
+                                    <option value="10">Noveno Nivel</option>
                                 </select>
                             </div>
                             <span id="nv-error" aria-live="assertive"></span>
                             <h1>Escoja el paralelo</h1>
                             <div class="select">
-                                <select name="paralelo" id="paralelo">
+                                <select #selePar name="paralelo" id="paralelo">
                                     <option value="0" selected disabled>Elige una opción</option>
-                                    <option value="A">Paralelo A</option>
-                                    <option value="B">Paralelo B</option>
-                                    <option value="C">Paralelo C</option>
+                                    <option value="1">Paralelo A</option>
+                                    <option value="2">Paralelo B</option>
+                                    <option value="3">Paralelo C</option>
                                 </select>
                             </div>
                             <span id="p-error" aria-live="assertive"></span>
                             <h1>Escoja la licencia que necesita</h1>
                             <div class="select">
-                                <select name="solicitud">
+                                <select  #seleLi name="solicitud">
                                     <option value="0" selected disabled>Elige una opción</option>
-                                    <option [value]="datitos" *ngFor="let datitos of solicitud">{{datitos.solicitud}}</option>
+                                    <option [value]="datitos.id" *ngFor="let datitos of solicitud">{{datitos.solicitud}}</option>
                                 </select>
                             </div>
                             <span id="l-error" aria-live="assertive"></span>

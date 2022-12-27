@@ -7,7 +7,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {ThemePalette} from '@angular/material/core';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {AngularFireModule} from '@angular/fire/compat'
-import {AngularFireAuthModule} from '@angular/fire/compat/auth'
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
