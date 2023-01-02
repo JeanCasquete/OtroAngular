@@ -27,7 +27,8 @@ crossorigin="anonymous" referrerpolicy="no-referrer"/>
                         <a href="https://www.youtube.com/channel/UCOferC0PjpEUegrVq8Re-TQ/videos?app=desktop&view=0&sort=dd&shelf_id=0"><i class="fa-brands fa-youtube"></i></a>
                         <a href="https://www.facebook.com/UleamEc/"><i class="fa-brands fa-facebook"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
-                        <a href="../Login/login.html"><i class="fa-solid fa-right-from-bracket"></i></a>
+                        <a><i (click)="logout()" class="fa-solid fa-right-from-bracket"></i></a>
+                        <p style="color: aliceblue;">Conectado: {{dataUser?.email}}</p>
 
                     </div>
                 </div>
