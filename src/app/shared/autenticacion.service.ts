@@ -39,6 +39,10 @@ export class AutenticacionService {
         
         case 'auth/wrong-password':
           return 'Contraseña incorrecta';
+
+         case 'auth/invalid-email':
+          return 'Correo Invalido';
+
        default:
         return 'Error desconocido';
 

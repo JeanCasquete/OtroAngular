@@ -87,7 +87,9 @@ export class LicenciasComponent implements OnInit  {
     }else if(this.validateSelections()) {  
       this.afAuth.currentUser.then(user => {
         console.log(nombre,carrera,nivel,Paralelo,licencia,user?.email); 
-        this.afs.collection('Licencias').add({ nombre: nombre, correo: user?.email, carrera: carrera,nivel: nivel, Paralelo: Paralelo, solicitud: licencia });
+        this.afs.collection('Licencias').add({ nombre: nombre, correo: user?.email,
+           carrera: carrera,nivel: nivel, Paralelo: Paralelo, solicitud: licencia });
+           this.error("Solicitud hecha correctamente")
       })
  
 

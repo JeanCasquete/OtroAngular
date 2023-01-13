@@ -15,6 +15,8 @@ export class RegistrarseComponent implements OnInit {
 
 
   public myForm!:FormGroup;
+  private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
   constructor(private fb:FormBuilder,private registerprd:AutenticacionService, 
     private router:Router,private _snackBar: MatSnackBar,private afAuth:AngularFireAuth) { }
   ngOnInit(): void {
@@ -23,7 +25,7 @@ export class RegistrarseComponent implements OnInit {
   private createMyForms():FormGroup {
     return this.fb.group({
       name:['',[Validators.required]],
-      email:['',[Validators.required]],
+      email:['',[Validators.required,Validators.pattern(this.emailPattern)]],
       password:['',[Validators.required]],
       password2:['',[Validators.required]]
 
@@ -36,7 +38,7 @@ export class RegistrarseComponent implements OnInit {
   public submitFormulario(){
     if(this.myForm.invalid)
     {
-      return this.errorExiste('Llena todos los datos');
+      return this.errorExiste('Llena los datos correctamente');
     } if(!this.registerprd.ingresarRegistro(this.myForm.value)) {
       return this.errorExiste('Las contraseñas deben ser iguales');    
      }else {

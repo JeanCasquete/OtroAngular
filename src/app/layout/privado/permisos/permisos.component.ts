@@ -90,7 +90,9 @@ export class PermisosComponent implements OnInit {
           nivel: nivel,
           Paralelo: Paralelo,
           solicitud: Permiso,
+          
         });
+        this.error("Solicitud hecha correctamente")
       });
     } else {
       this.error('Seleciona una opcion para cada apartado');
